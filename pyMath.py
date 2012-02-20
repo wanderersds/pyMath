@@ -5,16 +5,20 @@ from __future__ import division
 import string
 from function import *
 
-formula = str(raw_input("Function: "))
-print "Range"
-print "A:"
+#formula = str(raw_input("Function: "))
+print "Function = "
+formula = str(raw_input())
+print "Epsilon = "
+E = float(input())
+print "Range:"
+print "A = "
 a = float(input())
-print "B:"
+print "B = "
 b = float(input())
 
 c=cFunction(a,b)
 
-while (abs(b-a) > 0.1):2
+while (abs(b-a) > E):
     print "Delta(C)=" + '|' + str(b) + '-' + str(a) + '|' + '=' + str(abs(b-a))
     Fa = Function(a,'a',formula)
     Fb = Function(b,'b',formula)
@@ -28,4 +32,5 @@ while (abs(b-a) > 0.1):2
     c=cFunction(a,b)
 
 print "C=" + c.formula + '=' + str(c.value)
-print round(c,1)
+
+print round(c, len(str(E))-2)

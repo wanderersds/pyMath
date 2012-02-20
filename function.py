@@ -12,7 +12,7 @@ class Function():
         print "F(" + name + ")=" + self.formula + '=' + str(self.value)
 
     def __float__(self):
-		return self.value
+        return self.value
 
 class cFunction(Function):
     def __init__(self, a, b):

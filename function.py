@@ -8,7 +8,7 @@ class Function():
     value = 0.0
     def __init__(self, x, name, formula):
         self.formula = formula.replace('x', str(x))
-        self.value = float(getoutput("./bccalc.sh " + "'" + self.formula + "'"))
+        self.value = float(eval(self.formula))
         print name + self.formula + '=' + str(self.value)
 
 

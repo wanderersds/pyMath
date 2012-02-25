@@ -21,4 +21,4 @@ while (True):
 
 print "C=" + c_end.formula + '=' + str(c_end.value)
 
-print round(c_end.value, len(str(E))-2)
+print round(c_end.value, dcount(E))

@@ -21,24 +21,10 @@ class Function():
         self.value = float(eval(self.formula))
         print name + self.formula + '=' + str(self.value)
 
-
-
-
-#a=b=1
-#c = Function('C=', 'a+(b-a)/2.0', ['a'], [b])
-#
-#class cFunction(Function):
-#    def __init__(self, a, b):1111
-#        self.formula = str(a) + '+(' + str(b) + '-' + str(a) + ')/2.0'
-#        self.value = a+(b-a)/2.0
-#        print "C=" + self.formula + '=' + str(self.value)
-
-#class c2Function(Function):
-#
-#    def __init__(self, a , b, Fa, Fb):
-#        self.value = (a-((b-a)/(Fb.value-Fa.value))*Fa.value)
-#        self.formula = str(a) + '-((' + str(b) + '-' + str(a) + ')/(' + str(Fb.value) + '-' + str(Fa.value) + '))*' + str(Fa.value)
-#        print "C=" + self.formula + '=' + str(self.value)
-#
-#        a-((b-a)/(Fb-Fa))*Fa
-#
+def dcount(var):
+    rest = var % 1
+    i = 0
+    while (rest < 1):
+        rest = rest * 10
+        i = i + 1
+    return i

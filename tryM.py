@@ -19,6 +19,4 @@ while (abs(b-a) > E):
         print "F(c) и F(b) имеют один знак. (B=C)"
     c = Function('C=', 'a+(b-a)/2.0', ['a', 'b'], [a, b])
 
-#print "C=" + c.formula + '=' + str(c.value)
-
-print round(c.value, len(str(E))-2)
+print round(c.value, dcount(E))

@@ -2,34 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import re
-import string
-#from function import *
-
-formula = str(raw_input("Function = \n"))
-E = float(raw_input("Epsilon = \n"))
-print "Range:"
-a = float(raw_input("A = \n"))
-b = float(raw_input("B = \n"))
-
-class Function:
-    formula = ''
-    value = 0.0
-    def __init__(self, name, formula, replace, vars):
-        i = 0
-        while i < len(replace):
-            formula = formula.replace(replace[i], str(vars[i]))
-            i = i + 1
-        self.formula = formula
-        self.value = float(eval(self.formula))
-        print name + self.formula + '=' + str(self.value)
-
-def dcount(var):
-    rest = var % 1
-    i = 0
-    while (rest < 1):
-        rest = rest * 10
-        i = i + 1
-    return i
+from function import *
 
 r = re.compile('\-?[0-9]+')
 Ax, Bx, Cx = r.findall(formula)
@@ -40,8 +13,6 @@ Fb = Function('F(b)=', formula, ['x'], [b])
 if (Fa.value > Fb.value):
     print 'F(x) спадает.'
     print "F'= 2*"+ Ax +"*x+"+ Bx + "= 0"
-    #Fi = Function("F'=", "2*Ax*x+Bx", ["Ax", "Bx"], [Ax, Bx]) #test
-    #Fii = Function("F''=", "Bx", ["Bx"], [Bx])
     if (int(Bx) > 0):
         print "F''= "+Bx+' > 0'
         z = a
@@ -86,5 +57,4 @@ while (True):
     if (not (delta >= E and delta != delta_prev and delta_prev != delta_prev_prev)): break
 
 print "C=" + c_end.formula + '=' + str(c_end.value)
-
 print round(c_end.value, dcount(E))

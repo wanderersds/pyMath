@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import string
 from function import *
 
 c = Function('C=', 'a+(b-a)/2.0', ['a', 'b'], [a, b])

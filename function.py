@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from commands import getoutput
-
 formula = str(raw_input("Function = \n"))
 E = float(raw_input("Epsilon = \n"))
 print "Range:"
 a = float(raw_input("A = \n"))
 b = float(raw_input("B = \n"))
 
-class Function():
+class Function:
     formula = ''
     value = 0.0
     def __init__(self, name, formula, replace, vars):

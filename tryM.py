@@ -10,7 +10,7 @@ while (abs(b-a) > E):
     Fa = Function('F(a)=', formula, ['x'], [a])
     Fb = Function('F(b)=', formula, ['x'], [b])
     Fc = Function('F(c)=', formula, ['x'], [c.value])
-    if (Fc.value > 0 and Fa.value > 0) or (Fc.value < 0 and Fa.value < 0):
+    if (Fc > 0 and Fa > 0) or (Fc.value < 0 and Fa.value < 0):
         a=c.value
         print "F(c) и F(a) имеют один знак. (A=C)"
     else:

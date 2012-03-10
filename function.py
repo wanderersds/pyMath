@@ -51,6 +51,9 @@ class Function:
     def __div__(self, other):
         self.formulate('/', other)
 
+    def __abs__(self):
+        return Function('abs(' + self.name + ')', 'abs(' + self.formula + ')')
+
     def __lt__(self, other):
         return self.value < other
 

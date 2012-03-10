@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-formula = str(raw_input("Function = \n"))
-E = float(raw_input("Epsilon = \n"))
-print "Range:"
-a = float(raw_input("A = \n"))
-b = float(raw_input("B = \n"))
-
-class Function:
+class Function(object):
     formula = ''
     value = 0.0
     name = ''
@@ -80,3 +74,10 @@ def dcount(var):
         rest = rest * 10
         i = i + 1
     return i
+
+formula = str(raw_input("Function = \n"))
+E = Function('E', raw_input("Epsilon = \n"))
+print "Range:"
+a = Function('a', raw_input("A = \n"))
+b = Function('b', raw_input("B = \n"))
+

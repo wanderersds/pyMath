@@ -5,8 +5,6 @@ class Function(object):
     formula = ''
     value = 0.0
     name = ''
-    def __repr__(self):
-        return self.name + '='+ self.formula + '=' + str(self.value)
 
     def __init__(self, name, formula, replace = [], vars = []):
         self.formula = formula
@@ -16,7 +14,7 @@ class Function(object):
             self.formula = self.formula.replace(replace[i], str(vars[i]))
             i = i + 1
         self.value = float(eval(self.formula))
-        print self.__repr__()
+        print self.name + '='+ self.formula + '=' + str(self.value)
 
     def __float__(self):
         return self.value

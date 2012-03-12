@@ -11,7 +11,7 @@ class Function(object):
         self.name = name
         i = 0
         while i < len(replace):
-            self.formula = self.formula.replace(replace[i], str(vars[i]))
+            self.formula = self.formula.replace(replace[i], str(float(vars[i])))
             i = i + 1
         self.value = float(eval(self.formula))
         print self.name + '='+ self.formula + '=' + str(self.value)
@@ -32,16 +32,19 @@ class Function(object):
             raise TypeError("undefined addition: %s, %s" % (type(self), type(other)))
 
     def __add__(self, other):
-        self.formulate('+', other)
+        return self.formulate('+', other)
 
     def __sub__(self, other):
-        self.formulate('-', other)
+        return self.formulate('-', other)
 
     def __mul__(self, other):
-        self.formulate('*', other)
+        return self.formulate('*', other)
 
     def __div__(self, other):
-        self.formulate('/', other)
+        return self.formulate('/', other)
+
+    def __mod__(self, other):
+        return self.formulate('%', other)
 
     def __abs__(self):
         return Function('abs(' + self.name + ')', 'abs(' + self.formula + ')')
@@ -63,7 +66,6 @@ class Function(object):
 
     def __ge__(self, other):
         return self.value >= other
-
 
 def dcount(var):
     rest = var % 1

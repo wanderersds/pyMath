@@ -4,9 +4,8 @@
 from function import *
 
 c = Function('C', 'a+(b-a)/2.0', ['a', 'b'], [a, b])
-tmp = b-a
 
-while (abs(tmp) > E):
+while (abs(a-b) > E):
     print "Delta(C)" + '|' + str(b) + '-' + str(a) + '|' + '=' + str(abs(b-a))
     Fa = Function('F(a)', formula, ['x'], [a])
     Fb = Function('F(b)', formula, ['x'], [b])

@@ -23,7 +23,7 @@ class Function(object):
         return self.formula
 
     def formulate(self, symbol, other):
-        if (type(other) in [float, int]):
+        if (type(other) in [int, float]):
             other = float(other)
             return Function(self.name + symbol + str(other), '(' + self.formula + ')' + symbol + '(' + str(other) + ')')
         elif (type(other) == type(self)):
@@ -67,6 +67,20 @@ class Function(object):
     def __ge__(self, other):
         return self.value >= other
 
+    __radd__=__add__
+    __rsub__=__sub__
+    __rmul__=__mul__
+    __rdiv__=__div__
+    __rmod__=__mod__
+    __rabs__=__abs__
+    __rlt__=__lt__
+    __rle__=__le__
+    __req__=__eq__
+    __rne__=__ne__
+    __rgt__=__gt__
+    __rge__=__ge__
+
+
 def dcount(var):
     rest = var % 1
     i = 0
@@ -76,8 +90,8 @@ def dcount(var):
     return i
 
 formula = str(raw_input("Function = \n"))
-E = Function('E', raw_input("Epsilon = \n"))
+E = float(raw_input("Epsilon = \n"))
 print "Range:"
-a = Function('a', raw_input("A = \n"))
-b = Function('b', raw_input("B = \n"))
+a = float(raw_input("A = \n"))
+b = float(raw_input("B = \n"))
 
